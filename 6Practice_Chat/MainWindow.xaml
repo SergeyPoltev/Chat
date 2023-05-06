@@ -1,0 +1,49 @@
+﻿<Window x:Class="_6Practice_Chat.MainWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_6Practice_Chat"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid x:Name="MainGrid" Background="#FF313131">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.3*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="0.2*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="Aname" Grid.Column="1" TextAlignment="Center" Grid.Row="0" TextWrapping="Wrap" Text="Одноклассники" VerticalAlignment="Center" FontFamily="Impact" FontSize="72">
+            <TextBlock.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFFDD00" Offset="0"/>
+                    <GradientStop Color="#FFFAA300" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <TextBox 
+  x:Name="InputName"
+  materialDesign:HintAssist.Hint="Введите имя пользователя"
+  Grid.Row="1"
+            Width="Auto" Height="30px" BorderBrush="White" BorderThickness="2" Foreground="White" Grid.Column="1" VerticalAlignment="Center" />
+        <Button Grid.Row="2" Grid.Column="1" Margin="100 0 100 0"
+  Style="{StaticResource MaterialDesignRaisedSecondaryLightButton}"
+  Width="Auto"
+  ToolTip="Resource name: MaterialDesignRaisedSecondaryLightButton"
+  Content="Создать новый чат"
+  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" FontSize="18" Cursor="Hand" FontFamily="Arial Black" />
+
+        <Button Grid.Row="3" Grid.Column="1" Margin="100 0 100 0"
+  Style="{StaticResource MaterialDesignRaisedSecondaryLightButton}"
+  Width="Auto"
+  ToolTip="Resource name: MaterialDesignRaisedSecondaryLightButton"
+  Content="Подключиться к существующему"
+  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Cursor="Hand" FontSize="16" FontFamily="Arial Black" />
+    </Grid>
+</Window>
